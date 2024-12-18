@@ -8,52 +8,38 @@ import (
 	"strings"
 )
 
-func task1(lists [][]int) int {
-	// Case 1: All ascending 1..9 i==j
-	// Case 2: All descending 9..1 == ascending reverse(9..1)->1..9
+func task1And2(lists [][]int, fault int) int {
 	sum := 0
 	for _, lst := range lists {
-		i, j := 0, len(lst)-1
-		for i < len(lst)-1 && j > 0 {
-			if lst[i+1]-lst[i] > 0 && lst[i+1]-lst[i] < 4 {
-				i++
+		isum := 0
+		for i, n := 0, 0; i < len(lst)-1; i++ {
+			delta := lst[i+1] - lst[i]
+			isum += delta
+			if delta > 0 && delta < 4 {
 				continue
 			}
-			if lst[j-1]-lst[j] > 0 && lst[j-1]-lst[j] < 4 {
-				j--
-				continue
-			}
-			break
-		}
-		if i == len(lst)-1 || j == 0 {
-			sum++
-		}
-	}
-
-	return sum
-}
-
-func task2(lists [][]int) int {
-	sum := 0
-	for _, lst := range lists {
-		i, j, delta := 0, len(lst)-1, 0
-		for i < len(lst)-1 && j > 0 {
-			if lst[i+1]-lst[i] > 0 && lst[i+1]-lst[i] < 4 {
-				i++
-				continue
-			}
-			if lst[j-1]-lst[j] > 0 && lst[j-1]-lst[j] < 4 {
-				j--
-				continue
-			}
-			if delta > 0 {
+			if n == fault {
+				isum = len(lst) * 3
 				break
 			}
-			i++
-			j--
-			delta++
+			n++
 		}
-		if delta < 2 && (i == len(lst)-1 || j == 0) {
+
+		jsum := 0
+		for j, n := len(lst)-1, 0; j > 0; j-- {
+			delta := lst[j-1] - lst[j]
+			jsum += delta
+			if delta > 0 && delta < 4 {
+				continue
+			}
+			if n == fault {
+				jsum = len(lst) * 3
+				break
+			}
+			n++
+		}
+
+		if (isum >= len(lst)-1 && isum <= (len(lst)-1)*3) || (jsum >= len(lst)-1 && jsum <= (len(lst)-1)*3) {
 			sum++
 		}
 	}
@@ -82,6 +68,6 @@ func parse(path string) [][]int {
 
 func main() {
 	lists := parse("input.txt")
-	fmt.Printf("Task %d: %v\n", 1, task1(lists))
-	fmt.Printf("Task %d: %v\n", 2, task2(lists))
+	fmt.Printf("Task %d: %v\n", 1, task1And2(lists, 0))
+	fmt.Printf("Task %d: %v\n", 2, task1And2(lists, 1))
 }
