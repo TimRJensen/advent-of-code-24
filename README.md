@@ -3,6 +3,7 @@
 ```
 git clone https://github.com/TimRJensen/advent-of-code-24.git
 cd advent-of-code-24/day[x]
+touch input.txt
 go run .
 ```
 ## Solutions
