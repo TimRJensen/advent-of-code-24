@@ -5,16 +5,9 @@ import (
 	"fmt"
 	"log"
 	"os"
-)
 
-func atoi(buff []byte) int {
-	r := 0
-	for _, b := range buff {
-		r = r<<1 + r<<3
-		r += int(b) - 48
-	}
-	return r
-}
+	"github.com/TimRJensen/aoc2024/util"
+)
 
 func task1And2(buff []byte, useDo bool) int {
 	sum, flag, l := 0, true, newLexer(buff)
@@ -35,7 +28,7 @@ func task1And2(buff []byte, useDo bool) int {
 
 			n := 1
 			for _, buff := range bytes.Split(tok.val, []byte{','}) {
-				n *= atoi(buff)
+				n *= util.Atoi(buff)
 			}
 			sum += n
 		}
