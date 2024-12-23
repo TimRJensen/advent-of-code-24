@@ -9,7 +9,9 @@ Sum up the differences between each pair in a list. If that sum is between x and
 To allow for tolerance, one simply keeps tracks of how many invalid pairs seen in the list so far. Once it's above the boundary, set the lists sum > x\*3 and end the traversal.
 
 ## Deliverable
-| | Solution | Benchmark (ns/op) |
-| - | :------: | :-------------: |
-|Task 1 | 631 &#10003; | 0.0000230  |
-|Task 2 | 665 &#10003; | 0.0000427  |
+| | Solution | Benchmark (ns/op) | Complexity | 
+| - | :------: | :-------------: | :-----------: |
+|Task 1 | 631 &#10003; | 0.0000230  | O(*n*\**m*) |
+|Task 2 | 665 &#10003; | 0.0000427  | O(*n*\**m*) |
+
+*n*=number of inputs; *m*=length of a input;

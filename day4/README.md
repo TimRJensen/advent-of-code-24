@@ -6,7 +6,9 @@ Asumming that each line of the input is the same length, the lines are concatena
 Same as task 1, except validation occurs when one reaches a 'A' in the list. Then it's simply a matter of testing whether the diagonals are valid sequences.
 
 ## Deliverable
-| | Solution | Benchmark (ns/op) |
-| - | :------: | :-------------: |
-|Task 1 | 2562 &#10003; | 0.001175  |
-|Task 2 | 1902 &#10003; | 0.001154  |
+| | Solution | Benchmark (ns/op) | Complexity |
+| - | :------: | :-------------: | :-----------: |
+|Task 1 | 2562 &#10003; | 0.001175  | O(*n*\**m*) |
+|Task 2 | 1902 &#10003; | 0.001154  | O(*n*\**m*) |
+
+*n*=number of inputs; *m*=length of a input;
