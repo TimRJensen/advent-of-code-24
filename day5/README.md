@@ -4,7 +4,7 @@
 Append all the rules for a digit in a lookup table and simply traverse the list of inputs, while making sure that i+1 element is in i's ruleset.
 
 ## Task 2
-Ignore all the valid inputs from task one and simply sort the rest with a slightly custom quicksearch. This solution uses Hoarse's partition.
+Ignore all the valid inputs from task one and simply sort the rest with a slightly custom quicksearch. This solution uses Hoare's partition.
 
 ## Deliverable
 | | Solution | Benchmark (ns/op) | Complexity |

@@ -3,6 +3,7 @@
 ```
 git clone https://github.com/TimRJensen/advent-of-code-24.git
 cd advent-of-code-24/day[x]
+touch input.txt
 go run .
 ```
 ## Solutions
@@ -10,3 +11,4 @@ go run .
  - [Day 2](https://github.com/TimRJensen/advent-of-code-24/tree/main/day2)
  - [Day 3](https://github.com/TimRJensen/advent-of-code-24/tree/main/day3)
  - [Day 4](https://github.com/TimRJensen/advent-of-code-24/tree/main/day4)
+ - [Day 5](https://github.com/TimRJensen/advent-of-code-24/tree/main/day5)
